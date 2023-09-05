@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block styles %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .custom-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-custom {
+            background-color: #d1e7dd;
+            color: #155724;
+            border-color: #155724;
+        }
+    </style>
+{% endblock %}
+
+{% block body %} 
+<div class="contenedora">
+    <div class="btn-custom">
+        <div class="col-md-12 text-center">
+            <h1 class="custom-font"> {{ mensaje }} </h1>
+            <a href="/inicio" class="btn-custom">Iniciar Sesión</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

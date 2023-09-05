@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %} Entradas {% endblock %}
+
+{% block styles %}
+    <style>
+        .bg-custom {
+            background-color: #d1e7dd;
+        }
+
+        .text-custom {
+            color: #155724;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+{% endblock %}
+
+{% block body %} 
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <h2 class="text-custom">Entradas Recientes</h2>
+            <hr>
+            <ul class="list-group">
+                {% for entrada in entradas %}
+                <li class="list-group-item bg-custom">{{ entrada.contenido_entrada }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-custom">Agregar una entrada de blog</h2>
+            <hr>
+            <form action="/agregar" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="contenido" placeholder="Escribe tu entrada">
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Subir</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
